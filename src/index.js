@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Currency from "./Currency";
+import Maps from "./Maps";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Currency />
+    <Maps />
   </React.StrictMode>,
   document.getElementById("root")
 );
