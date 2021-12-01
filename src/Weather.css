@@ -1,0 +1,54 @@
+.details h3 {
+  /* margin-left: 45%; */
+  font-size: 20px;
+  text-transform: capitalize;
+  align-self: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+
+.details .temperature {
+  align-self: center;
+  width: 40%;
+}
+
+div .forecastClass ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 35%;
+  padding-left: 1%;
+  background: rgb(84, 113, 138);
+  border-radius: 3rem;
+  border: 1px solid;
+}
+
+div .forecastClass ul li {
+  list-style-type: none;
+  align-self: center;
+}
+
+.forecast {
+  display: none;
+}
+
+.button {
+  padding: 2em;
+  margin-left: 20%;
+  background-color: rgb(156, 194, 226);
+  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+  border: solid;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+div .forecastClass ul p {
+  align-self: center;
+}

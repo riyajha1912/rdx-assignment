@@ -1,0 +1,11 @@
+.details-app {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.details-app .weather-js {
+  margin-left: 3rem;
+  width: 80%;
+}
