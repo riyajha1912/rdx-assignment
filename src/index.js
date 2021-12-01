@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Maps from "./Maps";
+import Maps from "./Currency";
 
 ReactDOM.render(
   <React.StrictMode>
