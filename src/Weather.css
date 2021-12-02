@@ -4,7 +4,9 @@
   text-transform: capitalize;
   align-self: center;
 }
-
+h1 {
+  margin-left: 3rem;
+}
 .details {
   display: flex;
   flex-direction: row;
@@ -23,7 +25,7 @@ div .forecastClass ul {
   justify-content: space-around;
   margin-right: 35%;
   padding-left: 1%;
-  background: rgb(84, 113, 138);
+  background: rgb(183, 183, 184);
   border-radius: 3rem;
   border: 1px solid;
 }
@@ -39,7 +41,7 @@ div .forecastClass ul li {
 
 .button {
   padding: 2em;
-  margin-left: 20%;
+  margin-left: 15%;
   background-color: rgb(156, 194, 226);
   color: black;
   font-family: Georgia, "Times New Roman", Times, serif;

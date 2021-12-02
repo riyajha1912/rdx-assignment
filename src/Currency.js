@@ -1,24 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "./Currency.css";
 import axios from "axios";
-const Currency = () => {
-  const APIKEY = "42861af6-8d4e-47a2-b2ba-41df18a388c6";
-  // const placeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=newDelhi&key=${APIKEY}`;
-  const country_info = `https://v2.api.forex/infos/currency/usd.json?beautify=true&highlat=2&key=${APIKEY}`;
 
+const Currency = ({ name }) => {
+  const [value, setValue] = useState();
+  const APIKEY = "127bd1eca15de13ce2be0cd21eec92a4";
+  const country_info = `http://api.exchangeratesapi.io/v1/latest?access_key=${APIKEY}`;
   useEffect(() => {
     axios
       .get(country_info)
       .then((res) => {
-        console.log(res);
+        const rate = res.data.rates[name];
+        setValue(rate);
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
-  }, [country_info]);
+  }, [country_info, name]);
 
   return (
     <>
-      <div></div>
+      <div className="currency">
+        <table>
+          <th className-="header">
+            <td>Currency</td>
+          </th>
+          <th className-="header">
+            <td>Price</td>
+          </th>
+          <tr>
+            <td>EUR{name}</td>
+            <td>{value}</td>
+          </tr>
+        </table>
+      </div>
     </>
   );
 };

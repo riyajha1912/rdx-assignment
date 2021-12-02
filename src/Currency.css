@@ -1,0 +1,17 @@
+.currency {
+  position: absolute;
+  top: 70%;
+  margin-left: 45%;
+}
+
+.currency table th {
+  padding: 0 10rem;
+}
+
+.currency table .header td {
+  text-align: center;
+}
+
+.currency table tr td {
+  text-align: center;
+}

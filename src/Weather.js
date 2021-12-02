@@ -4,6 +4,7 @@ import "./Weather.css";
 
 const Weather = ({ currentWeather }) => {
   const [weath, setWeath] = useState("");
+  const [date, setDate] = useState();
   const [forecast, setForecast] = useState([]);
   const API_KEY = "2bb337a52dd5533fa46e136c135cb9e7";
   const [icon, setIcon] = useState();
@@ -17,8 +18,10 @@ const Weather = ({ currentWeather }) => {
     axios
       .get(current_url)
       .then((res) => {
+        setDate(res.data.current.dt);
         setWeath(res.data.current.temp);
         setIcon(res.data.current.weather[0].icon);
+
         let i = 1;
         let tempArray = [];
         for (i; i <= 3; i++) {
@@ -37,6 +40,7 @@ const Weather = ({ currentWeather }) => {
 
   return (
     <>
+      <h1>{new Date(date * 1000).toDateString("en")}</h1>
       <div className="details">
         <h3>temperature is:</h3>
         <img
@@ -44,7 +48,10 @@ const Weather = ({ currentWeather }) => {
           src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
           alt="ic"
         />
-        <p className="temperature">{weath} degree celcius.</p>
+        <p className="temperature">
+          {weath}
+          {"\u00b0"}C
+        </p>
       </div>
       <button className="button" onClick={handleClick}>
         Next 3 days forecast
@@ -52,14 +59,16 @@ const Weather = ({ currentWeather }) => {
       <div className="forecastClass forecast">
         {forecast.map((perIcon, id) => {
           return (
-            <ul>
+            <ul key={id}>
               <p>{new Date(perIcon.dt * 1000).toDateString("en")}</p>
               <img
-                key={id}
                 src={`http://openweathermap.org/img/wn/${perIcon.icon}@2x.png`}
                 alt="icon"
               />
-              <li key={id}>{perIcon.temp} degree celcius.</li>
+              <li>
+                {perIcon.temp}
+                {"\u00b0"}C
+              </li>
             </ul>
           );
         })}
